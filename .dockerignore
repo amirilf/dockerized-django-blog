@@ -1,0 +1,9 @@
+# Envs
+src/env/
+src/venv/
+
+# Compiled 
+src/**/*__pycache__
+src/**/*.pyc
+
+.gitignore
