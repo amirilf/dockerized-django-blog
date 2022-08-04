@@ -1,9 +1,10 @@
 # Envs
-src/env/
-src/venv/
+env/
+venv/
 
 # Compiled 
-src/**/*__pycache__
 src/**/*.pyc
+src/**/*__pycache__
 
+# Git
 .gitignore

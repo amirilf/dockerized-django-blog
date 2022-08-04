@@ -1,0 +1,61 @@
+[{
+        "model": "main.modal",
+        "pk": 1,
+        "fields": {
+            "title": "Hello world",
+            "desc": "This is the first message of Blogilf to the whole world (:",
+            "icon_code": "ri-earth-line",
+            "color_code": "#b20969"
+        }
+    },
+    {
+        "model": "main.modal",
+        "pk": 2,
+        "fields": {
+            "title": "Just a message",
+            "desc": "This message is from the Blogilf team.",
+            "icon_code": "ri-chat-smile-2-line",
+            "color_code": "#ff5828"
+        }
+    },
+    {
+        "model": "main.modal",
+        "pk": 3,
+        "fields": {
+            "title": "Support service",
+            "desc": "Our support services have been created for answering your questions and are ready to serve you",
+            "icon_code": "ri-customer-service-2-line",
+            "color_code": "#ffbb2c"
+        }
+    },
+    {
+        "model": "main.modal",
+        "pk": 4,
+        "fields": {
+            "title": "High speed website",
+            "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero minus temporibus animi rerum magnam blanditiis aperiam nisi rem. Veniam necessitatibus temporibus perferendis ducimus illum doloribus vitae consequatur unde omnis odio.",
+            "icon_code": "ri-wifi-fill",
+            "color_code": "#47aeff"
+        }
+    },
+    {
+        "model": "main.modal",
+        "pk": 5,
+        "fields": {
+            "title": "See the translation of the articles now!",
+            "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero minus temporibus animi rerum magnam blanditiis aperiam nisi rem. Veniam necessitatibus temporibus perferendis ducimus illum doloribus vitae consequatur unde omnis odio.",
+            "icon_code": "ri-translate",
+            "color_code": "#5578ff"
+        }
+    },
+    {
+        "model": "main.modal",
+        "pk": 6,
+        "fields": {
+            "title": "Share your articles with others!",
+            "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero minus temporibus animi rerum magnam blanditiis aperiam nisi rem. Veniam necessitatibus temporibus perferendis ducimus illum doloribus vitae consequatur unde omnis odio.",
+            "icon_code": "ri-navigation-fill",
+            "color_code": "#29cc61"
+        }
+    }
+]

@@ -1,0 +1,169 @@
+{% extends '_base.html' %}
+
+{% block title %}Blogilf{% endblock title %}
+
+
+{% block body %}
+    <!-- Index Section -->
+    <section id="index">
+        <div class="index-container">
+            <h1>Welcome to Blogilf</h1>
+            <h2>
+                <i class="ri-double-quotes-r">A place to read and write</i><i class="ri-double-quotes-r"></i>
+            </h2>
+            <a href="/#blog" class="btn-get-started scrollto"><i class="bi bi-arrow-down"></i></a>
+        </div>
+    </section>
+    <!-- End Index -->
+
+    <!-- Main -->
+    <main id="main">
+
+        <!-- Blog Section -->
+        <section id="blog">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Blog</h2>
+                    <h3>
+                        <i class="ri-article-line"></i> Check out the <a href="blog">Blog</a>
+                    </h3>
+                    <p>
+                        Where sometimes I write.<a href="blog"><i class="ri-external-link-line ms-1"></i></a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- End Blog Section -->
+
+
+        <!-- Problem Section -->
+        <section id="=problems">
+            <div class="container">
+                <div class="section-title">
+                    <h2>problems</h2>
+                    <h3>
+                        <i class="ri-lightbulb-flash-line"></i> Solved <a href="problems">Problems</a>
+                    </h3>
+                    <p>
+                        The problems I encountered and then solved, this is where I publish solutions.<a href="problems"><i class="ri-external-link-line ms-1"></i></a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- End Problem Section -->
+
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>About</h2>
+
+                    <h3>
+                        <i class="ri-draft-line"></i> Learn More <span>About Me</span>
+                    </h3>
+
+                    <p>
+                        {{ user.desc|safe }}
+                    </p>
+
+                    <p>
+                        These are the technologies I've worked with and some of which I'm currently working with. In general, they are a summary of my experience so far
+                        <i class="ri-arrow-down-s-fill"></i>
+                    </p>
+
+                    <br>
+
+                    <div class="col-12 col-lg-8 col-xl-6 mx-auto">
+                        <div class="pricing mt-4 mt-md-0">
+                            <div class="box recommended">
+                                {% for skill in skills %}
+                                    <span class="btn btn-buy mt-2">{{ skill.title }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- End About Section -->
+
+
+        <!-- Updates Section -->
+        <section id="projects" class="projects">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Updates</h2>
+                    <h3><i class="ri-folder-settings-line"></i> See the <span>Updates</span></h3>
+                    <p>See the latest updates or messages from the Blogilf team here.</p>
+                    <small>(Click for more details)</small>
+                </div>
+
+                <div class="row">
+                    {% for message in updates %}
+                    <!-- Message -->
+                    <div class="col-md-4 col-6 mt-4">
+                        <div class="icon-box">
+                            <i class="{{ message.icon_code }}" style="color: {{ message.color_code }};"></i>
+                            <h3>
+                                <a href="#" data-body="{{ message.desc }}" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                {{ message.title }}
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- End Message -->                    
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- End Updates Section -->
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <h3><i class="ri-account-pin-circle-line"></i> Contact <span>Me</span></h3>
+                    <p>From here you can send any comments, criticisms, suggestions or questions and I'll answer if needed. You can also email me: <a href="mailto:{{ user.email }}">{{ user.email }}</a>.</p>
+                </div>
+
+                <div class="col-12 col-lg-6 mx-auto">
+
+                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        </div>
+                        <div class="text-center"><button class="btn-buy" type="submit">Send Message</button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact Section -->
+
+{% endblock body %}
+
