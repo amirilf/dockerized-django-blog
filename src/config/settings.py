@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
     # Local
     'accounts',
-    'articles',
+    'blog',
     'main',
 
     # 3rd-party

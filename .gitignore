@@ -1,5 +1,7 @@
 # Docker volume #
 data
+
+# Custom
 .todo
 
 # Django #
