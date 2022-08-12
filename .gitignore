@@ -1,6 +1,6 @@
 # Docker volume #
 data
-todo.todo
+.todo
 
 # Django #
 *.log

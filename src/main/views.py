@@ -1,12 +1,7 @@
-from django.shortcuts import render
+from django.views.generic import DetailView,ListView
 from .models import Modal
-# Create your views here.
 
-def index_view(request):
 
-    modals = Modal.objects.all()
-
-    context = {
-        'updates' : modals
-    }
-    return render(request,'index.html',context)
+class IndexView(ListView):
+    template_name = 'index.html'
+    model = Modal

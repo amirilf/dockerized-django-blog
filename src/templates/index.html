@@ -28,68 +28,12 @@
                         <i class="ri-article-line"></i> Check out the <a href="blog">Blog</a>
                     </h3>
                     <p>
-                        Where sometimes I write.<a href="blog"><i class="ri-external-link-line ms-1"></i></a>
+                        Where you can read other people's articles or publish your own article and enjoy reading and writing.<a href="blog"><i class="ri-external-link-line ms-1"></i></a>
                     </p>
                 </div>
             </div>
         </section>
         <!-- End Blog Section -->
-
-
-        <!-- Problem Section -->
-        <section id="=problems">
-            <div class="container">
-                <div class="section-title">
-                    <h2>problems</h2>
-                    <h3>
-                        <i class="ri-lightbulb-flash-line"></i> Solved <a href="problems">Problems</a>
-                    </h3>
-                    <p>
-                        The problems I encountered and then solved, this is where I publish solutions.<a href="problems"><i class="ri-external-link-line ms-1"></i></a>
-                    </p>
-                </div>
-            </div>
-        </section>
-        <!-- End Problem Section -->
-
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-
-                <div class="section-title">
-
-                    <h2>About</h2>
-
-                    <h3>
-                        <i class="ri-draft-line"></i> Learn More <span>About Me</span>
-                    </h3>
-
-                    <p>
-                        {{ user.desc|safe }}
-                    </p>
-
-                    <p>
-                        These are the technologies I've worked with and some of which I'm currently working with. In general, they are a summary of my experience so far
-                        <i class="ri-arrow-down-s-fill"></i>
-                    </p>
-
-                    <br>
-
-                    <div class="col-12 col-lg-8 col-xl-6 mx-auto">
-                        <div class="pricing mt-4 mt-md-0">
-                            <div class="box recommended">
-                                {% for skill in skills %}
-                                    <span class="btn btn-buy mt-2">{{ skill.title }}</span>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!-- End About Section -->
 
 
         <!-- Updates Section -->
@@ -105,7 +49,7 @@
                 </div>
 
                 <div class="row">
-                    {% for message in updates %}
+                    {% for message in object_list %}
                     <!-- Message -->
                     <div class="col-md-4 col-6 mt-4">
                         <div class="icon-box">
@@ -132,8 +76,8 @@
 
                 <div class="section-title">
                     <h2>Contact</h2>
-                    <h3><i class="ri-account-pin-circle-line"></i> Contact <span>Me</span></h3>
-                    <p>From here you can send any comments, criticisms, suggestions or questions and I'll answer if needed. You can also email me: <a href="mailto:{{ user.email }}">{{ user.email }}</a>.</p>
+                    <h3><i class="ri-account-pin-circle-line"></i> Contact <span>Us</span></h3>
+                    <p>From here you can send any comments, criticisms, suggestions or questions.</p>
                 </div>
 
                 <div class="col-12 col-lg-6 mx-auto">
