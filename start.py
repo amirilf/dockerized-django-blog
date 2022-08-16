@@ -65,7 +65,7 @@ def check_docker_installation() -> bool:
     return False
 
 
-def main():
+def main() -> None:
     if check_docker_installation():
         if db_directory() == True:
             

@@ -1,5 +1,7 @@
 {% extends '_base.html' %}
 
+{% load static %}
+
 {% block title %}Blogilf | blog{% endblock title %}
 
 {% block header_class%}header-inner-pages{% endblock header_class %}
@@ -12,7 +14,7 @@
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Blog</li>
                 </ol>
                 <h2>Recent articles</h2>
@@ -33,11 +35,11 @@
                         <article class="entry">
 
                             <div class="entry-img">
-                                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                                <img src="{% static 'img/bg.jpg' %}" alt="" class="img-fluid">
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="article.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
+                                <a href="/blog/article">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
                             </h2>
 
                             <div class="entry-meta">
@@ -53,7 +55,7 @@
                                     aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
                                 </p>
                                 <div class="read-more">
-                                    <a href="article.html">Read More</a>
+                                    <a href="/blog/article">Read More</a>
                                 </div>
                             </div>
 
@@ -64,11 +66,11 @@
                         <article class="entry">
 
                             <div class="entry-img">
-                                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                                <img src="{% static 'img/bg.jpg' %}" alt="" class="img-fluid">
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="article.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
+                                <a href="/blog/article">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
                             </h2>
 
                             <div class="entry-meta">
@@ -85,7 +87,7 @@
                                     aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
                                 </p>
                                 <div class="read-more">
-                                    <a href="article.html">Read More</a>
+                                    <a href="/blog/article">Read More</a>
                                 </div>
                             </div>
 
@@ -96,11 +98,11 @@
                         <article class="entry">
 
                             <div class="entry-img">
-                                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                                <img src="{% static 'img/bg.jpg' %}" alt="" class="img-fluid">
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="article.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
+                                <a href="/blog/article">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
                             </h2>
 
                             <div class="entry-meta">
@@ -117,7 +119,7 @@
                                     aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
                                 </p>
                                 <div class="read-more">
-                                    <a href="article.html">Read More</a>
+                                    <a href="/blog/article">Read More</a>
                                 </div>
                             </div>
 
