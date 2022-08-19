@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'main',
 
     # 3rd-party
-
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -153,3 +155,20 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # User Model
 AUTH_USER_MODEL = 'accounts.User'
+
+
+# django-allauth configs
+
+SITE_ID = 0
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_EMAIL_REQUIRED=True
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_SESSION_REMEMBER = True
+LOGIN_REDIRECT_URL = 'main:index'
+LOGOUT_REDIRECT_URL = 'main:index'

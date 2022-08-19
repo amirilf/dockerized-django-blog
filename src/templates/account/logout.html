@@ -1,0 +1,55 @@
+{% extends "_base.html" %}
+
+{% block header_class%}header-inner-pages{% endblock header_class %}
+
+{% block title %}Blogilf | Logout{% endblock title %}
+
+{% block footer_class %}fixed-bottom{% endblock footer_class %}
+
+{% block body %}
+
+    <!-- Main -->
+    <main id="main">
+
+      <!-- Breadcrumbs -->
+      <section id="breadcrumbs" class="breadcrumbs">
+          <div class="container">
+              <ol>
+                  <li><a href="/">Home</a></li>
+                  <li>Logout</li>
+              </ol>
+          </div>
+      </section>
+      <!-- End Breadcrumbs -->
+
+        <!-- Contact Section -->
+        <section class="contact">
+
+          <div class="container">
+
+              <div class="section-title">
+                  <h3><i class="ri-account-pin-circle-line"></i> <span>Logout</span> page</h3>
+                  <p>Are you sure you want to logout?</p>
+              </div>
+              <div class="col-12 col-lg-6 mx-auto">
+                  <form class="login php-email-form" method="POST" action="{% url 'account_logout' %}">                      
+                      {% csrf_token %}
+                      <div class="text-center">
+                        <a href="{{ request.META.HTTP_REFERER }}">
+                          <span class="btn-buy">No, take me back</span>
+                        </a>
+                        
+                        <button class="btn-buy" type="submit">Logout</button>
+                      
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </section>
+      <!-- End Contact Section -->
+
+
+      </main>
+  <!-- End Main -->
+
+{% endblock body %}

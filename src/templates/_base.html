@@ -46,6 +46,25 @@
                     <li><a class="nav-link scrollto {% if 'blog' in request.path %}active{% endif %}" href="/blog">Blog</a></li>
                     <li><a class="nav-link scrollto" href="/#about">About</a></li>
                     <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+                    
+
+                    {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Profile <i class="ri-user-2-fill"></i>
+                            </a>
+                            
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><span class="dropdown-item text-dark">Hello {{ user.username }}</span></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Dashbord</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>                            
+                            </ul>
+                        </li>
+                    {% else %}
+                    <li><a class="nav-link scrollto {% if '/accounts/login/' == request.path %}active{% endif %}" href="{% url 'account_login' %}">Login</a></li>
+                    {% endif %}
+                    
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -63,7 +82,7 @@
 
 
     <!-- Footer -->
-    <footer id="footer">
+    <footer id="footer" class="{% block footer_class %}{% endblock footer_class %}">
         <div class="container d-md-flex py-4">
             <div class="me-md-auto text-center text-md-start ">
                 <div class="rcopyright ps-md-5 pt-md-2">
