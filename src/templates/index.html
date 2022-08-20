@@ -19,15 +19,6 @@
     <!-- Main -->
     <main id="main">
 
-
-        {% if user.is_authenticated %}
-Hi {{ user.username }}
-{% else %}
-You are not logged in
-<a href="{% url 'account_login' %}" >login</a>
-<a href="{% url 'account_signup' %}" >signup</a>
-{% endif %}
-
         <!-- Blog Section -->
         <section id="blog">
             <div class="container">

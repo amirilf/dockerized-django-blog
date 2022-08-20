@@ -29,9 +29,9 @@
 
               <div class="section-title">
                   <h3><i class="ri-account-pin-circle-line"></i> Let's <span>Login</span></h3>
-                  <p>Log in to use great articles and Blogilf features.</p>
+                  <p>Don't have an account? <a href="{{ signup_url }}">signin</a></p>
               </div>
-              <div class="col-12 col-lg-6 mx-auto">
+              <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 mx-auto">
                 {% for error in form.non_field_errors %}
                 <p style="color: red;margin-top: 5px;">{{ error }}</p>
               {% endfor %}

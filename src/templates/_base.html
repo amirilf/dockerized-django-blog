@@ -62,7 +62,7 @@
                             </ul>
                         </li>
                     {% else %}
-                    <li><a class="nav-link scrollto {% if '/accounts/login/' == request.path %}active{% endif %}" href="{% url 'account_login' %}">Login</a></li>
+                    <li><a class="nav-link scrollto {% if '/accounts/login/' == request.path or '/accounts/signup/' == request.path %}active{% endif %}" href="{% url 'account_login' %}">Login/Signup</a></li>
                     {% endif %}
                     
                 </ul>
