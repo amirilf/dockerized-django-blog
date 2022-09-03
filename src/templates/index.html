@@ -4,6 +4,8 @@
 
 
 {% block body %}
+
+
     <!-- Index Section -->
     <section id="index">
         <div class="index-container">
@@ -11,14 +13,32 @@
             <h2>
                 <i class="ri-double-quotes-r">A place to read and write</i><i class="ri-double-quotes-r"></i>
             </h2>
-            <a href="/#blog" class="btn-get-started scrollto"><i class="bi bi-arrow-down"></i></a>
+            <a href="/#messages" class="btn-get-started scrollto"><i class="bi bi-arrow-down"></i></a>
         </div>
     </section>
     <!-- End Index -->
 
+
+    <!-- Messages -->
+    <div id='messages'>
+    {% if messages %}
+        <div id='messages'>
+            {% for message in messages %}
+                <div class="{% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} alert alert-dismissible fade show m-0" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>   
+            {% endfor %}
+        </div>
+    {% endif %}
+    </div>
+    <!-- End Messages -->
+    
+
     <!-- Main -->
     <main id="main">
 
+        
         <!-- Blog Section -->
         <section id="blog">
             <div class="container">

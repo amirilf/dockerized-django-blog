@@ -1940,3 +1940,35 @@ section {
     background: #d91e42;
     color: white;
 }
+
+
+/* Custom */
+
+.notif i {
+    font-size: 17px !important;
+}
+
+.noselect {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.noselect:focus {
+    outline: none !important;
+}
+
+.messages div {
+    margin-top: 67px;
+    margin-bottom: -67px;
+}
+
+@media (max-width: 990px) {
+    .messages div {
+        margin-top: 54px;
+    }
+}

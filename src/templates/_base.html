@@ -46,25 +46,30 @@
                     <li><a class="nav-link scrollto {% if 'blog' in request.path %}active{% endif %}" href="/blog">Blog</a></li>
                     <li><a class="nav-link scrollto" href="/#about">About</a></li>
                     <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
-                    
+
 
                     {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Profile <i class="ri-user-2-fill"></i>
+                                Profile
                             </a>
                             
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <ul class="dropdown-menu dropdown-menu-dark noselect" aria-labelledby="navbarDarkDropdownMenuLink">
                                 <li><span class="dropdown-item text-dark">Hello {{ user.username }}</span></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Dashbord</a></li>
                                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>                            
                             </ul>
                         </li>
+
+                        <li><a class="nav-link scrollto notif" title='Unread notifications' href="/notification"><i class="bi bi-bell pe-1"></i>(12)</a></li>
+
                     {% else %}
                     <li><a class="nav-link scrollto {% if '/accounts/login/' == request.path or '/accounts/signup/' == request.path %}active{% endif %}" href="{% url 'account_login' %}">Login/Signup</a></li>
                     {% endif %}
-                    
+
+
+                
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -72,13 +77,33 @@
 
         </div>
 
-    </header>
-    <!-- End Header -->
 
-    {% block body %}{% endblock body %}
+
+    </header>
+    <!-- End Header -->    
+
+    <!-- Main -->
+    <main id="main">
+
+        {% if '/' != request.path %}
+            {% if messages %}
+                <div id='messages' class='messages'>
+                    {% for message in messages %}
+                        <div class="{% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} alert alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>   
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endif %}
+
+
+        {% block body %}
+        {% endblock body %}
 
     </main>
-    <!-- End main -->
+    <!-- End Main -->
 
 
     <!-- Footer -->
